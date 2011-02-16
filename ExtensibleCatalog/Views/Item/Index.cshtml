@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ExtensibleCatalog.ViewModels.ItemListView>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        
+        <table>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Description
+                </th>
+            </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Name, "Detail", new {id = item.Id})
+                </td>
+                <td>
+                    @String.Format("{0:F}", item.Price)
+                </td>
+                <td>
+                    @item.Description
+                </td>
+            </tr>
+        }
+
+        </table>
+
+
+    </div>
+</body>
+</html>

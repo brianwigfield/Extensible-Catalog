@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Details</h2>
+
+This is a complex item and its name is @ViewBag.Name
+
+<div>
+    Sizes Available Are
+    <ul>
+    @foreach (var size in ViewBag.Sizes)
+    {
+        <li>@size</li>
+    }
+    </ul>
+</div>
+
+<div>
+    Styles Available Are
+    <ul>
+    @foreach (var style in ViewBag.Styles)
+    {
+        <li>@style</li>
+    }
+    </ul>
+</div>
